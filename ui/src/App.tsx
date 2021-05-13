@@ -2,14 +2,11 @@ import { Navbar } from "./components/NavBar/Navbar";
 import { SearchBar } from "./components/SearchBar/SearchBar";
 import { Main } from "./components/Main";
 import { Container } from "@material-ui/core";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function App() {
-  useEffect(() => {
-    axios.get("/getStuff").then((res) => console.log(res));
-    console.log("trololo");
-  }, []);
+
   return (
     <div className="wrapper">
       <Navbar />

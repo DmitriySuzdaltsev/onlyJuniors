@@ -12,6 +12,7 @@ import { red } from "@material-ui/core/colors";
 import Link from "@material-ui/core/Link";
 import IconButton from "@material-ui/core/IconButton";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles({
   root: {
@@ -36,7 +37,12 @@ const useStyles = makeStyles({
   },
 });
 
-export const CardItem = () => {
+interface Props{
+  author: any,
+  body: string
+}
+
+export const CardItem = (props: Props) => {
   const classes = useStyles();
   const avatar = () => (
     <Avatar aria-label="recipe" className={classes.avatar}>
@@ -45,7 +51,7 @@ export const CardItem = () => {
   );
   const title = () => (
     <Link href="#" className={classes.username} onClick={() => {}}>
-      OnlyJuniors
+      { props.author }
     </Link>
   );
   const subtitle = () => (
@@ -68,7 +74,7 @@ export const CardItem = () => {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          hi-tech porn, worst code in internet ever
+          { props.body }
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
           Lorem ipsum dolor sit amet
