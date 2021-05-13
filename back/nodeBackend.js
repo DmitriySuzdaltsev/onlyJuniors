@@ -18,6 +18,10 @@ app.get("/getStuff", (req, res) => {
     res.json(JSON.stringify(reply));
 });
 
+app.get('/',function(req,res) {
+    res.sendFile('../build/index.html');
+});
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });

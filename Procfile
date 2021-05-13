@@ -1,1 +1,1 @@
-web: nohup npm run start && cd ./back && npm i && nohup npm run start
+web: node ./back/nodeBackend.js
