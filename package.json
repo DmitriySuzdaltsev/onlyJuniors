@@ -8,7 +8,7 @@
     "body-parser": "^1.19.0"
   },
   "scripts": {
-    "build": "cd ui && npm i && npm run build"
+    "build": "npm install ./ui && npm npm --prefix /ui run build"
   },
   "eslintConfig": {
     "extends": [
