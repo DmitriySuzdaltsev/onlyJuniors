@@ -19,7 +19,7 @@ app.get("/getStuff", (req, res) => {
 });
 
 app.get('/',function(req,res) {
-    res.sendFile('../build/index.html');
+    res.sendFile(__dirname + './build/index.html');
 });
 
 app.listen(port, () => {
