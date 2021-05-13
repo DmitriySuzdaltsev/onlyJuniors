@@ -1,1 +1,1 @@
-web: cd ./back && npm i && node ./nodeBackend.js
+web: npm i && node ./nodeBackend.js $PORT
