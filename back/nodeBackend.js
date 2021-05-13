@@ -9,7 +9,8 @@ app.use(bodyParser.json());
 app.use(cors());
 app.options("*", cors());
 
-app.get("/getStuff", async (req, res) => {
+app.get("/getStuff", (req, res) => {
+    console.log('/getStuff initiated!')
     var reply = {
         title: 'Fuck you!',
         body: 'Meme code here...'
