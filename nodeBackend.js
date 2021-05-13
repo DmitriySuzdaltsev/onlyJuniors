@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/ui/build'));
 app.get("/getStuff", (req, res) => {
     console.log('/getStuff initiated!')
     var reply = {
-        title: 'Fuck you!',
+        title: 'Fuck youuuuuuuuuuu!',
         body: 'Meme code here...'
     }
     res.json(JSON.stringify(reply));
