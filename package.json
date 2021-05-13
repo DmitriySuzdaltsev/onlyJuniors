@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "cd ./ui & ls"
+    "build": "cd ./ui & npm install"
   },
   "engines": {
     "node": "12.16.2"
