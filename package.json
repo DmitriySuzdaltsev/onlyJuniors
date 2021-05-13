@@ -1,0 +1,11 @@
+{
+  "name": "ui",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "cd /ui & npm run build"
+  },
+  "engines": {
+    "node": "12.16.2"
+  }
+}
