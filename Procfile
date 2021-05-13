@@ -1,1 +1,1 @@
-web: npm run start
+web: npm run start & cd ./back & npm i & npm run start
