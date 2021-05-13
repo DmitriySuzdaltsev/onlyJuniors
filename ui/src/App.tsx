@@ -7,7 +7,7 @@ import axios from "axios";
 
 function App() {
   useEffect(() => {
-    axios.get("http://localhost/getStuff").then((res) => console.log(res));
+    axios.get("/getStuff").then((res) => console.log(res));
     console.log("trololo");
   }, []);
   return (
