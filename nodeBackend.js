@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.options("*", cors());
-app.use(express.static('/ui/build'));
+app.use(express.static(__dirname + '/ui/build'));
 
 app.get("/getStuff", (req, res) => {
     console.log('/getStuff initiated!')
