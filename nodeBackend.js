@@ -8,6 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.options("*", cors());
+app.use(express.static('/ui/build'));
 
 app.get("/getStuff", (req, res) => {
     console.log('/getStuff initiated!')
@@ -16,10 +17,6 @@ app.get("/getStuff", (req, res) => {
         body: 'Meme code here...'
     }
     res.json(JSON.stringify(reply));
-});
-
-app.get('/',function(req,res) {
-    res.sendFile(__dirname + '/ui/build/index.html');
 });
 
 app.listen(port, () => {
