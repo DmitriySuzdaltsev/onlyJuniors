@@ -12,4 +12,15 @@ export const useStyles = makeStyles(() => ({
       boxShadow: "none",
       borderBottom: "1px solid lightgray",
     },
+    logoContainer: {
+      width: '220px',
+      height: '40px',
+      top: '5px',
+      position: 'absolute',
+      left: '10px',
+    },
+    logo: {
+      width: '100%',
+      height: '100%',
+    }
   }));
