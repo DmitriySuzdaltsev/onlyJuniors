@@ -12,7 +12,7 @@ import { red } from "@material-ui/core/colors";
 import Link from "@material-ui/core/Link";
 import IconButton from "@material-ui/core/IconButton";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import PropTypes from 'prop-types'
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -27,38 +27,46 @@ const useStyles = makeStyles({
     fontSize: "16px",
     lineHeight: "20px",
     fontWeight: 600,
+    cursor: 'pointer'
   },
   userAccount: {
     fontSize: "14px",
     color: "#8a96a3",
+    cursor: 'pointer',
     "&:hover": {
       color: "#007aff",
     },
   },
 });
 
-interface Props{
-  author: any,
+interface Props {
+  author: any
   body: string
+  _id: string
 }
 
 export const CardItem = (props: Props) => {
   const classes = useStyles();
+  const history = useHistory()
   const avatar = () => (
     <Avatar aria-label="recipe" className={classes.avatar}>
       KEK
     </Avatar>
   );
   const title = () => (
-    <Link href="#" className={classes.username} onClick={() => {}}>
+    <Link className={classes.username} onClick={onCardClick(props._id)}>
       { props.author }
     </Link>
   );
   const subtitle = () => (
-    <Link href="#" className={classes.userAccount} onClick={() => {}}>
-      @OnlyJuniors
+    <Link className={classes.userAccount} onClick={onCardClick(props._id)}>
+      @{ props.author }
     </Link>
   );
+
+  const onCardClick = (id: string) => () => {
+    history.push(`/user/${id}`)
+  }
 
   return (
     <Card className={classes.root}>

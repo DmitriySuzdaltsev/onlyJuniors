@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const PostSchema = require("./models/Post");
 
 // Init backend Express app
-const port = process.argv[2];
+const port = process.argv[2] || 3005;
 const app = express();
 
 app.use(bodyParser.json());

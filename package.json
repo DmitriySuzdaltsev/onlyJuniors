@@ -3,13 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "body-parser": "^1.19.0",
-    "mongoose": "^5.12.8"
+    "mongoose": "^5.12.8",
+    "nodemon": "^2.0.7"
   },
   "scripts": {
-    "build": "npm --prefix ./ui install  && npm --prefix ./ui run build"
+    "build": "npm --prefix ./ui install  && npm --prefix ./ui run build",
+    "dev": "nodemon nodeBackend.js"
   },
   "eslintConfig": {
     "extends": [

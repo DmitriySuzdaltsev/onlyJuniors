@@ -8,9 +8,15 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { Container } from "@material-ui/core";
 import { useStyles } from "./styles";
 import image from "./only_juniors.png";
+import {useHistory} from "react-router-dom";
 
 export const Navbar = () => {
   const classes = useStyles();
+  const history = useHistory()
+
+  const onPathHandler = (path: string) => () => {
+    history.push(`${path}`)
+  }
 
   return (
     <div className={classes.root}>
@@ -20,7 +26,7 @@ export const Navbar = () => {
       <AppBar position="static" color="transparent" className={classes.appbar}>
         <Container maxWidth="lg">
           <div className={classes.navbar}>
-            <IconButton edge="start" color="inherit" aria-label="menu">
+            <IconButton edge="start" color="inherit" aria-label="menu" onClick={onPathHandler('/')}>
               <HomeOutlinedIcon />
             </IconButton>
             <IconButton edge="start" color="inherit" aria-label="menu">

@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import { CardItem } from "./CardItem/CardItem";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const Main = () => {
@@ -26,13 +26,10 @@ export const Main = () => {
   }
 
   const handleChange = (name: string) => (event: any) => {
-    console.log('Changes!')
     setMessage(event.target.value)
   };
 
   const sendPost = () => {
-    console.log('CLICKED!')
-
     axios.post('/addPost',{
       author: 'MemeLord',
       body: message,
@@ -43,7 +40,7 @@ export const Main = () => {
   return (
     <Grid container spacing={1}>
       <Grid item md={9}>
-        { feed.sort((a,b) =>  b.timestamp - a.timestamp).map((item: {author: string, body: string}) =>  <CardItem {...item}/>) }
+        { feed.sort((a,b) =>  b.timestamp - a.timestamp).map((item) =>  <CardItem key={item._id} {...item}/>) }
       </Grid>
       <Grid item md={3}>
         <Card>
@@ -51,17 +48,14 @@ export const Main = () => {
             <Typography variant="h5" component="h2">
               Отправить тупняк
             </Typography>
-            <Typography component="p">
-              <TextField
-                id="outlined-uncontrolled"
-                label="Поделись дегродацией"
-                defaultValue="name"
-                margin="normal"
-                variant="outlined"
-                value={message}
-                onChange={handleChange('content')}
-              />
-            </Typography>
+            <TextField
+              id="outlined-uncontrolled"
+              label="Поделись дегродацией"
+              margin="normal"
+              variant="outlined"
+              value={message}
+              onChange={handleChange('content')}
+            />
           </CardContent>
           <CardActions>
             <Button size="small" onClick={ sendPost }>Отправить</Button>
